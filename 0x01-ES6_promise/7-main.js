@@ -23,4 +23,4 @@ const test = async () => {
   console.log(await loadBalancer(promiseUKSlow, promiseFR));
 };
 
-console.log(test());
+test(); 
