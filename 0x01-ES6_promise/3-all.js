@@ -9,14 +9,14 @@ export default function handleProfileSignup() {
     .then((data) => {
       body = data.body;
     })
-    .catch(() => {
+    .catch((error) => {
       console.log('Signup system offline');
     });
   createUser()
     .then((data) => {
       console.log(`${body} ${data.firstName} ${data.lastName}`);
     })
-    .catch(() => {
+    .catch((error) => {
       console.log('Signup system offline');
     });
 }
