@@ -18,9 +18,9 @@ const promiseFR = new Promise(((resolve, reject) => {
   setTimeout(resolve, 200, frSuccess);
 }));
 
-const test = async () => {
+const testing = async () => {
   console.log(await loadBalancer(promiseUK, promiseFR));
   console.log(await loadBalancer(promiseUKSlow, promiseFR));
 };
 
-test(); 
+testing();
