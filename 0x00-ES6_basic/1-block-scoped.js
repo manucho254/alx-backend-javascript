@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 export default function taskBlock(trueOrFalse) {
     let task = false;
     let task2 = true;
@@ -9,3 +11,8 @@ export default function taskBlock(trueOrFalse) {
   
     return [task, task2];
   }
+
+
+let expansion1989 = undefined;
+
+console.log(expansion1989 === undefined ? 89 : expansion1989)

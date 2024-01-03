@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 export default function getSumOfHoods(initialNumber, expansion1989, expansion2019) {
 
    expansion1989 = expansion1989 === undefined ? 89 : expansion1989;
