@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import getSanFranciscoDescription from "./6-string-interpolation.js";
+import getSanFranciscoDescription from './6-string-interpolation';
 
 console.log(getSanFranciscoDescription());
