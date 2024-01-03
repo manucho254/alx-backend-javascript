@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-unused-vars */
 
 import getBudgetObject from './7-getBudgetObject';
 
