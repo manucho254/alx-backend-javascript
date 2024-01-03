@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import getSumOfHoods from './3-default-parameter.js';
 
 console.log(getSumOfHoods(34));
