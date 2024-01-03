@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import signUpUser from "./4-user-promise";
+import signUpUser from './4-user-promise';
 
-console.log(signUpUser("Bob", "Dylan"));
+console.log(signUpUser('Bob', 'Dylan'));
