@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+/* eslint-disable no-unused-vars */
+
 import ClassRoom from './0-classroom';
 
 const room = new ClassRoom(10);
