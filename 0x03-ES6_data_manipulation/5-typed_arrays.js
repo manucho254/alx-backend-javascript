@@ -6,8 +6,7 @@ export default function createInt8TypedArray(length, position, value) {
   try {
     intBuff[position] = value;
     return view;
-  } catch (error) {
-    console.log(error);
+  } catch {
     throw new Error('Position outside range');
   }
 }
