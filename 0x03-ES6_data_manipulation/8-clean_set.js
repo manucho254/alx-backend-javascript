@@ -5,7 +5,7 @@ export default function cleanSet(set, startString) {
   }
   set.forEach((value) => {
     if (value.includes(startString)) {
-      if (startString.startsWith(startString)) {
+      if (value.startsWith(startString)) {
         if (newStr.length === 0) {
           newStr += `${value.replace(startString, '')}`;
         } else {
