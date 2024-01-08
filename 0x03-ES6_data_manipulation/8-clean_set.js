@@ -1,28 +1,20 @@
 export default function cleanSet(set, startString) {
-  let newStr = '';
+  const newStr = [];
   if (!startString || startString.length === 0 || !(set instanceof Set)) {
-    return newStr;
+    return '';
   }
 
   set.forEach((value) => {
     if (typeof value === 'string') {
       if (value.includes(startString)) {
         if (value.startsWith(startString)) {
-          if (newStr.length === 0) {
-            newStr += `${value.replace(startString, '')}`;
-          } else {
-            newStr += `-${value.replace(startString, '')}`;
-          }
+          newStr.push(value.replace(startString, ''));
         } else if (!value.startsWith(startString)) {
-          if (newStr.length === 0) {
-            newStr += `${value}`;
-          } else {
-            newStr += `-${value}`;
-          }
+          newStr.push(value);
         }
       }
     }
   });
 
-  return newStr;
+  return newStr.join('-');
 }
