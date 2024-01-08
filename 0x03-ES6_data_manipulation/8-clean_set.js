@@ -5,7 +5,7 @@ export default function cleanSet(set, startString) {
   }
 
   set.forEach((value) => {
-    if (value instanceof String) {
+    if (typeof value === 'string') {
       if (value.includes(startString)) {
         if (value.startsWith(startString)) {
           if (newStr.length === 0) {
@@ -13,10 +13,12 @@ export default function cleanSet(set, startString) {
           } else {
             newStr += `-${value.replace(startString, '')}`;
           }
-        } else if (newStr.length === 0) {
-          newStr += `${value}`;
-        } else {
-          newStr += `-${value}`;
+        } else if (!value.startsWith(startString)) {
+          if (newStr.length === 0) {
+            newStr += `${value}`;
+          } else {
+            newStr += `-${value}`;
+          }
         }
       }
     }
