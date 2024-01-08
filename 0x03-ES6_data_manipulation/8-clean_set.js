@@ -1,6 +1,6 @@
 export default function cleanSet(set, startString) {
   let newStr = '';
-  if (startString.length === 0 || !(set instanceof Set)) {
+  if (!startString || startString.length === 0 || !(set instanceof Set)) {
     return newStr;
   }
 
