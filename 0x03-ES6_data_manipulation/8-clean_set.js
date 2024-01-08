@@ -6,9 +6,9 @@ export default function cleanSet(set, startString) {
   set.forEach((value) => {
     if (value.includes(startString)) {
       if (newStr.length === 0) {
-        newStr += `${value.replaceAll(startString, '')}`;
+        newStr += `${value.replace(startString, '')}`;
       } else {
-        newStr += `-${value.replaceAll(startString, '')}`;
+        newStr += `-${value.replace(startString, '')}`;
       }
     }
   });
