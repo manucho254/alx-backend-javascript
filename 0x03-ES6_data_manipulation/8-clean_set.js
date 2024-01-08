@@ -5,7 +5,7 @@ export default function cleanSet(set, startString) {
   }
 
   set.forEach((value) => {
-    if (typeof value === 'string') {
+    if (value instanceof String) {
       if (value.includes(startString)) {
         if (value.startsWith(startString)) {
           if (newStr.length === 0) {
