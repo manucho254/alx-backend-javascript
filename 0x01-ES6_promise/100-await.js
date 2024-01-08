@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /* eslint-disable no-unused-vars */
 
 import { createUser, uploadPhoto } from './utils';
