@@ -14,21 +14,23 @@ async function countStudents(file) {
     rows.forEach((row, idx) => {
       const split = row.split(',');
       const last = split.length - 1;
-      size += 1;
-      if (idx > 0) fields[split[last]] = [];
+
+      if (split.length > 1 && idx > 0) {
+        size += 1;
+        fields[split[last]] = [];
+      }
     });
 
     rows.forEach((row, idx) => {
       const split = row.split(',');
       const last = split.length - 1;
-      if (split.length > 0) {
-        if (idx > 0) {
-          fields[split[last]].push(split[0]);
-        }
+
+      if (split.length > 1 && idx > 0) {
+        fields[split[last]].push(split[0]);
       }
     });
 
-    console.log(`Number of students: ${size - 1}`);
+    console.log(`Number of students: ${size}`);
 
     for (const [key, val] of Object.entries(fields)) {
       console.log(
