@@ -17,8 +17,11 @@ function countStudents(file) {
     rows.forEach((row, idx) => {
       const split = row.split(',');
       const last = split.length - 1;
-      if (idx > 0) {
-        fields[split[last]].push(split[0]);
+
+      if (split.length > 0) {
+        if (idx > 0) {
+          fields[split[last]].push(split[0]);
+        }
       }
     });
 
