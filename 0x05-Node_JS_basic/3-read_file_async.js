@@ -13,11 +13,11 @@ async function countStudents(file) {
 
     rows.forEach((row, idx) => {
       const split = row.split(',');
-      const last = split.length - 1;
 
       if (idx > 0) {
+        const last = split[split.length - 1];
         size += 1;
-        fields[split[last]] = [];
+        fields[last] = [];
       }
     });
 
@@ -32,8 +32,13 @@ async function countStudents(file) {
 
     console.log(`Number of students: ${size}`);
 
-    for (const [k, v] of Object.entries(fields)) {
-      console.log(`Number of students in ${k}: ${v.length}. List: ${v.join(', ')}`);
+    for (const [key, val] of Object.entries(fields)) {
+      const splitKey = key.split('\r')[0];
+      console.log(
+        `Number of students in ${splitKey}: ${val.length}. List: ${val.join(
+          ', ',
+        )}`,
+      );
     }
   } catch (error) {
     throw new Error('Cannot load the database');

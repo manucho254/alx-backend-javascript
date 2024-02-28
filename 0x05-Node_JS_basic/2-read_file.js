@@ -9,6 +9,7 @@ function countStudents(file) {
 
     rows.forEach((row, idx) => {
       const split = row.split(',');
+
       if (idx > 0) {
         const last = split[split.length - 1];
         size += 1;
@@ -35,8 +36,7 @@ function countStudents(file) {
       );
     }
   } catch (error) {
-    console.error(error);
-    // throw new Error('Cannot load the database');
+    throw new Error('Cannot load the database');
   }
 }
 
