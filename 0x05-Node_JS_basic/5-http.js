@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
         res.end();
       })
       .catch((error) => {
-        console.log(error);
+        res.write(`${error}\n`);
       });
 
     res.end();
