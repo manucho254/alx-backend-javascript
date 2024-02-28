@@ -40,6 +40,7 @@ async function countStudents(file) {
         )}`,
       );
     }
+    return { size, fields };
   } catch (error) {
     throw new Error('Cannot load the database');
   }
