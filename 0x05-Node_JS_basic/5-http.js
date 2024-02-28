@@ -12,23 +12,23 @@ const server = http.createServer((req, res) => {
     res.write('Hello Holberton School!');
     res.end();
   } else if (reqUrl === '/students') {
-    res.write('This is the list of our students\n');
+    res.write('This is the list of our students');
     countStudents(fileName)
       .then((data) => {
-        res.write(`Number of students: ${data.size}\n`);
+        res.write(`Number of students: ${data.size}`);
 
         for (const [key, val] of Object.entries(data.fields)) {
           const splitKey = key.split('\r')[0];
           res.write(
             `Number of students in ${splitKey}: ${val.length}. List: ${val.join(
               ', ',
-            )}\n`,
+            )}`,
           );
         }
         res.end();
       })
       .catch((error) => {
-        res.write(`${error}\n`);
+        res.write(`${error}`);
       });
 
     res.end();
