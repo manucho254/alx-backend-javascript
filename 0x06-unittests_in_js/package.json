@@ -1,0 +1,14 @@
+{
+  "name": "unittests",
+  "version": "1.0.0",
+  "description": "Testing code",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Manucho254",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.3.0"
+  }
+}
