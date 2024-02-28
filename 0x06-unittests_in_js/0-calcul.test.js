@@ -2,13 +2,15 @@ const calculateNumber = require("./0-calcul");
 const assert = require("assert");
 
 describe("calculateNumber", function () {
-  it("Return 6 when the values are present (3, 3)", function () {
+  it("Return sum with correct values", function () {
     assert.equal(calculateNumber(3, 3), 6);
+    assert.equal(calculateNumber(1, 3), 4);
+    assert.equal(calculateNumber(-1, -2), -3);
+    assert.equal(calculateNumber(1, -2), -1);
+    assert.equal(calculateNumber(-1, 2), 1);
   });
-  it("Return NAN if only one argument is provided (3)", function () {
-    assert.equal(calculateNumber(3), NaN);
-  });
-  it("Return NAN if only no arguments are provided ()", function () {
-    assert.equal(calculateNumber(), NaN);
+  it("Return NAN if invalid number of arguments ()", function () {
+    assert(isNaN(calculateNumber()));
+    assert(isNaN(calculateNumber(1)));
   });
 });
