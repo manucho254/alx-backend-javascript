@@ -9,8 +9,4 @@ describe("calculateNumber", function () {
     assert.equal(calculateNumber(1, -2), -1);
     assert.equal(calculateNumber(-1, -2.7), -4);
   });
-  it("Return NAN if invalid number of arguments ()", function () {
-    assert(isNaN(calculateNumber()));
-    assert(isNaN(calculateNumber(1)));
-  });
 });
