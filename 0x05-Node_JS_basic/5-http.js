@@ -1,18 +1,15 @@
 const http = require('http');
-const url = require('url');
 const countStudents = require('./3-read_file_async');
 
 const fileName = process.argv[2];
 
 // Make our HTTP server
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  const reqUrl = url.parse(req.url).pathname;
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
 
-  if (reqUrl === '/') {
+  if (req.url === '/') {
     res.end('Hello Holberton School!');
-  } else if (reqUrl === '/students') {
+  } else if (req.url === '/students') {
     let resData = '';
     resData += 'This is the list of our students\n';
 
