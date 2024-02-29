@@ -1,5 +1,4 @@
 const express = require("express");
-const { json } = require("node:stream/consumers");
 
 const app = express();
 const port = 7865;
