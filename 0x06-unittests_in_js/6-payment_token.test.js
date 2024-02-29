@@ -1,11 +1,13 @@
 const getPaymentTokenFromAPI = require("./6-payment_token");
 const { expect } = require("chai");
 
-describe.only("AsyncTest", function () {
+describe.only("getPaymentTokenFromAPI", function () {
   it("should return `an object` if `true` is passed in", function (done) {
-    getPaymentTokenFromAPI(true, function (success) {
-      expect(success).to.equal({ data: "Successful response from the API" });
+    getPaymentTokenFromAPI(true).then((res) => {
+      expect(res).to.be.an("object");
+      expect(res).to.have.property("data");
+      expect(res.data).to.equal("Successful response from the API");
+      done();
     });
-    done();
   });
 });
