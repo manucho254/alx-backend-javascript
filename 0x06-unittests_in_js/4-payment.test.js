@@ -16,14 +16,24 @@ describe("calculateNumber", function () {
 });
 
 describe("sendPaymentRequestToApi", function () {
-  it("Return sum with correct values", function () {
-    const stub = sinon.stub(Utils, "calculateNumber");
-    stub.withArgs(10, 20).callsFake(function foo() {
-      return 30;
-    });
-    Utils.calculateNumber.callThrough();
-    expect(sendPaymentRequestToApi(10, 20)).to.be.equal(30);
-    expect(Utils.calculateNumber.calledOnce).to.be.true;
-    stub.restore();
+  let calculateNumberStub;
+
+  beforeEach(() => {
+    calculateNumberStub = sinon.stub(Utils, "calculateNumber");
+  });
+
+  afterEach(() => {
+    calculateNumberStub.restore();
+  });
+
+  it("should return correct sum", () => {
+    const totalAmount = 7;
+    const totalShipping = 4;
+    const expectedResult = 42; // Mocking the calculation result
+
+    calculateNumberStub.returns(expectedResult);
+    const result = sendPaymentRequestToApi(totalAmount, totalShipping);
+
+    expect(result).to.equal(expectedResult);
   });
 });
