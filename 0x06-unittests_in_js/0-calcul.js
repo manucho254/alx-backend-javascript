@@ -1,5 +1,5 @@
 function calculateNumber(a, b) {
-  return Math.floor(a + b);
+  return Math.round(a + b);
 }
 
 module.exports = calculateNumber;
