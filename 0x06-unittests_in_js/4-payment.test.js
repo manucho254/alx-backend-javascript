@@ -1,5 +1,5 @@
 const calculateNumber = require("./2-calcul_chai");
-const sendPaymentRequestToApi = require("./3-payment");
+const sendPaymentRequestToApi = require("./4-payment");
 const Utils = require("./utils");
 const { expect } = require("chai");
 const sinon = require("sinon");
@@ -17,9 +17,13 @@ describe("calculateNumber", function () {
 
 describe("sendPaymentRequestToApi", function () {
   it("Return sum with correct values", function () {
-    const spy = sinon.spy(Utils, "calculateNumber");
-    sendPaymentRequestToApi(1, 2);
+    const stub = sinon.stub(Utils, "calculateNumber");
+    stub.withArgs(10, 20).callsFake(function foo() {
+      return 30;
+    });
+    Utils.calculateNumber.callThrough();
+    expect(sendPaymentRequestToApi(10, 20)).to.be.equal(30);
     expect(Utils.calculateNumber.calledOnce).to.be.true;
-    spy.restore();
+    stub.restore();
   });
 });
